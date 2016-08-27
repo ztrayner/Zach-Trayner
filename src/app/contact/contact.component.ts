@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactForm }    from '../contact-form';
+import { ContactForm }    from '../contactForm';
 import { Validators } from '@angular/common';
 import { GlobalValidator } from '../global-validator';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder } from '@angular/forms';
