@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactForm }    from '../contactForm';
 import { Validators } from '@angular/common';
 import { GlobalValidator } from '../global-validator';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Http, Response, Headers, RequestOptions, ConnectionBackend, HTTP_PROVIDERS } from '@angular/http';
-import { ContactService } from '../contact.service';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +10,7 @@ import { ContactService } from '../contact.service';
   templateUrl: 'contact.component.html',
   styleUrls: ['contact.component.css'],
   directives: [REACTIVE_FORM_DIRECTIVES],
-  providers: [ContactService, Http, ConnectionBackend, HTTP_PROVIDERS]
+  providers: [Http, ConnectionBackend, HTTP_PROVIDERS]
 })
 export class ContactComponent implements OnInit {
     public contactForm: FormGroup; // our model driven form
@@ -21,7 +19,7 @@ export class ContactComponent implements OnInit {
     public errorMessage: string;
     public response: any = {};
 
-    constructor(private _fb: FormBuilder, private contactService: ContactService) { } // form builder simplify form initialization
+    constructor(private _fb: FormBuilder) { } // form builder simplify form initialization
 
     ngOnInit() {
         this.contactForm = this._fb.group({
@@ -31,18 +29,6 @@ export class ContactComponent implements OnInit {
             _gotcha: [''],
             _subject: ['Inquiry from zachtrayner.com']
         });
-    }
-
-    save(model: ContactForm, isValid: boolean) {
-        if (!model || !isValid) { return; }
-        this.submitted = true; // set form submit to true
-        console.log(JSON.stringify(model));
-        this.contactService.sendEmail(model)
-            .subscribe(
-                response => this.response,
-                error =>  this.errorMessage = <any>error
-            );
-
     }
 
 
