@@ -1,0 +1,28 @@
+.text-wrapper {
+    max-width: 480px;
+    margin: 80px auto 0;
+    line-height: 20px;
+    text-align: left;
+    h1 {
+        font-size: 42px;
+        text-transform: uppercase;
+        line-height: normal;
+        margin-top: 60px;
+    }
+    h2 {
+        font-size: 14px;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+    }
+    .underlined {
+        border-bottom: 1px solid #000;
+        padding-bottom: 2px;
+        display: inline-block;
+    }
+    p {
+        margin-top: 30px;
+        letter-spacing: 0.5px;
+        font-size: 16px;
+        line-height: calc(16px * 1.35);
+    }
+}

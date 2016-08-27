@@ -1,0 +1,18 @@
+.menu {
+    position: absolute;
+    width: 49%;
+    bottom: 40px;
+    padding: 2rem;
+    text-align: center;
+    .menu-item {
+        display: inline-block;
+        margin: 0 20px;
+        a {
+          color: #000;
+          font-weight: bold;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 18px;
+        }
+    }
+}

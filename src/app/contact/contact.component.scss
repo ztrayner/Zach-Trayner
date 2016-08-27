@@ -1,0 +1,67 @@
+$button-color: #e7e6e4;
+
+.text-wrapper {
+    max-width: 480px;
+    margin: 80px auto 0;
+    line-height: 20px;
+    text-align: left;
+    font-size: 16px;
+    line-height: calc(16px * 1.35);
+    .underlined {
+        border-bottom: 1px solid #000;
+        padding-bottom: 2px;
+        display: inline-block;
+    }
+    .description {
+        margin-top: 20px;
+    }
+    .linkedin {
+        margin-top: 20px;
+        display: inline-block;
+    }
+    .form {
+        margin-top: 40px;
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            border: 0;
+            border-bottom: 1px solid black;
+            font-size: 16px;
+            &:focus {
+                outline: 0;
+            }
+        }
+        input {
+            padding: 10px 0 3px 0px;
+        }
+        textarea {
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+        &-group {
+            &:not(:first-child) {
+                margin-top: 20px;
+            }
+        }
+        &-submit {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 5px 20px;
+            border: 1px solid rgba(0,0,0,0.5);
+            background: $button-color;
+            color: #000;
+            &:hover {
+                background: darken($button-color, 5%);
+                cursor: pointer;
+            }
+        }
+        .ng-valid[required] {
+          border-left: 5px solid #42A948;
+        }
+
+        .ng-invalid:not(.ng-untouched) {
+          border-left: 5px solid #a94442;
+        }
+    }
+}
